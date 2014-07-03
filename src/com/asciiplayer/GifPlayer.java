@@ -1,6 +1,4 @@
 package com.asciiplayer;
-
-import java.awt.image.BufferedImage;
 import java.nio.file.Path;
 
 import javax.imageio.ImageIO;
@@ -13,7 +11,8 @@ public class GifPlayer extends SequencePlayer {
 
 	@Override
 	public void play() {
-		//BufferedImage gif = ImageIO.read(get)		
+		BufferedImage gif = ImageIO.read(getSource());
+		
 	}
 	
 }

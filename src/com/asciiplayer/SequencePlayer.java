@@ -11,10 +11,7 @@ public abstract class SequencePlayer extends FilePlayer {
 		super(path);
 	}
 	
-	protected List<String> convert (File file)
-	{
-		return new LinkedList<String>();
-	}
+	protected abstract List<String> convert (File file);
 	
 	// from file to list<BufferedImage>
 	// foreach ()
