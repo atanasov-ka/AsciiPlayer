@@ -1,19 +1,11 @@
 package com.asciiplayer;
 import java.io.IOException;
 import java.net.URISyntaxException;
+import java.nio.file.Paths;
 
 
 public class Main {
 	public static void main(String[] args) {
-		ImageConverter converter = new ImageConverter();
-		try {
-			converter.exec("C:\\Users\\John\\Desktop\\3.jpg", 50);
-		} catch (URISyntaxException | IOException e) {
-			e.printStackTrace();
-		}
-		
-		// Player p = new Player...
-		// p.play();
 
 	}
 }
