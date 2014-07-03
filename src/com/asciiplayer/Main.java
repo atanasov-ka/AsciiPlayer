@@ -1,3 +1,4 @@
+package com.asciiplayer;
 import java.io.IOException;
 import java.net.URISyntaxException;
 
@@ -12,6 +13,9 @@ public class Main {
 		} catch (URISyntaxException | IOException e) {
 			e.printStackTrace();
 		}
+		
+		// Player p = new Player...
+		// p.play();
 
 	}
 
