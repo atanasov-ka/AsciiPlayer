@@ -13,13 +13,13 @@ public class ImageConverter {
 
 	private String convert(int intensity)
 	{
-		 if           (intensity > 220 && intensity <= 255) return "  ";
-		 else if      (intensity > 180 && intensity <= 220) return "--";
-		 else if      (intensity > 140 && intensity <= 180) return "**";
-		 else if      (intensity > 100 && intensity <= 140) return "##";
-		 else if      (intensity > 60  && intensity <= 100) return "88";
-		 else if      (intensity > 20 && intensity  <= 60) return "&&";
-		 else return "@@";
+		 if      (intensity > 220 && intensity <= 255) return "  ";
+		 else if (intensity > 180 && intensity <= 220) return "--";
+		 else if (intensity > 140 && intensity <= 180) return "**";
+		 else if (intensity > 100 && intensity <= 140) return "##";
+		 else if (intensity > 60  && intensity <= 100) return "88";
+		 else if (intensity > 20 && intensity  <= 60)  return "&&";
+		 else                                          return "@@";
 	}
 
 	public void exec(String string, int consoleSize) throws URISyntaxException, IOException {
