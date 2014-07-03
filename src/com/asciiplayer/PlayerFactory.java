@@ -13,9 +13,9 @@ public class PlayerFactory {
 		case "jpeg":
 		case "jpg":
 		case "png":
-			return new PicturePlayer();
+			return new PicturePlayer(file);
 		case "gif":
-			return new GifPlayer();
+			return new GifPlayer(file);
 		default:
 			throw new UnknownResourceTypeException();
 		}

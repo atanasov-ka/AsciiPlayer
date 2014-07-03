@@ -1,11 +1,18 @@
 package com.asciiplayer;
 
-public class FilePlayer implements Player {
+import java.nio.file.Path;
 
-	@Override
-	public void play() {
-		// TODO Auto-generated method stub
-		
+public abstract class FilePlayer implements Player {
+	protected Path path;
+	public FilePlayer(Path path) {
+		setPath(path);
+	}
+	protected Path getPath() {
+		return path;
 	}
 
+	protected void setPath(Path path) {
+		this.path = path;
+	}
+	
 }
