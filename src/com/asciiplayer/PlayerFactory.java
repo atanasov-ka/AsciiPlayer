@@ -10,11 +10,9 @@ public class PlayerFactory {
 		String extension = Files.probeContentType(file);
 	    extension = extension.toLowerCase();
 		switch (extension) {
-		case "jpeg":
-		case "jpg":
-		case "png":
+		case "image/jpeg":
 			return new PicturePlayer(file);
-		case "gif":
+		case "image/gif":
 			return new GifPlayer(file);
 		default:
 			throw new UnknownResourceTypeException();

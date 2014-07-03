@@ -1,6 +1,11 @@
 package com.asciiplayer;
 
+import java.awt.image.BufferedImage;
+import java.io.IOError;
+import java.io.IOException;
 import java.nio.file.Path;
+
+import javax.imageio.ImageIO;
 
 
 public class PicturePlayer extends FilePlayer {
@@ -11,8 +16,8 @@ public class PicturePlayer extends FilePlayer {
 	}
 
 	@Override
-	public void play() {
-		// TODO Auto-generated method stub
-		
+	public void play() throws IOException {
+		BufferedImage image = ImageIO.read(getPath().toFile());
+		System.out.println(PlayerUtils.stringify(image, 100));
 	}
 }
