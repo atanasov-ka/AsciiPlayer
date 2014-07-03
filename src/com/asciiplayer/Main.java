@@ -4,9 +4,7 @@ import java.net.URISyntaxException;
 
 
 public class Main {
-
 	public static void main(String[] args) {
-		
 		ImageConverter converter = new ImageConverter();
 		try {
 			converter.exec("C:\\Users\\John\\Desktop\\3.jpg", 50);
@@ -18,5 +16,4 @@ public class Main {
 		// p.play();
 
 	}
-
 }

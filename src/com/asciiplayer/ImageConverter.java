@@ -10,8 +10,6 @@ import java.nio.file.Paths;
 import javax.imageio.ImageIO;
 
 public class ImageConverter {
-
-
 	private String convert(int intensity)
 	{
 		 if      (intensity > 220 && intensity <= 255) return "  ";
@@ -28,7 +26,6 @@ public class ImageConverter {
 		
 		int width = buffer.getWidth();
 		int height = buffer.getHeight();
-		
 		
 		int blockSize = width / consoleSize;
 		
