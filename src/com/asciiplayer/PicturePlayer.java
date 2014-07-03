@@ -18,6 +18,6 @@ public class PicturePlayer extends FilePlayer {
 	@Override
 	public void play() throws IOException {
 		BufferedImage image = ImageIO.read(getPath().toFile());
-		System.out.println(PlayerUtils.stringify(image, 100));
+		System.out.println(PlayerUtils.stringify(image, 50));
 	}
 }

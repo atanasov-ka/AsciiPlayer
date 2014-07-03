@@ -9,20 +9,15 @@ public class Main {
 			return;
 		
 		Player player = null;
-	
-			try {
-				player = PlayerFactory.newPlayer(Paths.get(args[0]));
-			} catch (UnknownResourceTypeException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-			try {
-				player.play();
-			} catch (Exception e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-	
-		
+		try {
+			player = PlayerFactory.newPlayer(Paths.get(args[1]));
+		} catch (UnknownResourceTypeException e) {
+			e.printStackTrace();
+		}
+		try {
+			player.play();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}		
 	}
 }
