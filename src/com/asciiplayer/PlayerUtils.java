@@ -4,7 +4,7 @@ import java.awt.Color;
 import java.awt.image.BufferedImage;
 
 public class PlayerUtils {
-	public static void write(BufferedImage image, int columns)
+	public static String stringify(BufferedImage image, int columns)
 	{
 		int width = image.getWidth();
 		int height = image.getHeight();
@@ -16,14 +16,13 @@ public class PlayerUtils {
 		StringBuilder picture = new StringBuilder();
 		for (int i = 0; i < heigthBlocks; ++i) {
 			for (int j = 0; j < widthBlocks; j++) {
-				
 				int intens = getIntenseFromBlock(i, j, blockSize, image);
 				picture.append(intensToString(intens));
 			}
 			picture.append("\n");
 		}
 		
-		System.out.println(picture.toString());
+		return picture.toString();
 	}
 	
 	private static int getIntenseFromBlock(int h, int w, int blockSize, BufferedImage buffer) {
