@@ -5,12 +5,12 @@ import java.nio.file.Paths;
 
 public class Main {
 	public static void main(String[] args) throws IOException {
-		if (args.length == 0)
+		if (args.length < 2)
 			return;
 		
 		Player player = null;
 		try {
-			player = PlayerFactory.newPlayer(Paths.get(args[1]));
+			player = PlayerFactory.newPlayer(Paths.get(args[0]), Integer.parseInt(args[1]));
 		} catch (UnknownResourceTypeException e) {
 			e.printStackTrace();
 		}

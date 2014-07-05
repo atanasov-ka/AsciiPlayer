@@ -1,8 +1,11 @@
 package com.asciiplayer;
 
 import java.io.File;
+import java.io.IOException;
 import java.nio.file.Path;
 import java.util.List;
+
+import jline.ConsoleReader;
 
 public abstract class SequencePlayer extends FilePlayer {
 	public SequencePlayer(Path source) {
@@ -17,29 +20,26 @@ public abstract class SequencePlayer extends FilePlayer {
 
 	public void play() throws Exception {
 		List<String> list = convert(getSource());
+		//ConsoleReader c = new ConsoleReader();
+		
 		for (String string : list) {
+			//c.printString(string);
 			System.out.println(string);
-
+			
 			try {
-				Thread.sleep(50);
+				Thread.sleep(150);
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
 
-			clearConsole();
+			
+			//c.clearScreen();
+			System.out.print("\u001b[2J");
+			System.out.flush();
 		}
 	}
 
-	public final static void clearConsole() {
-		try {
-			final String os = System.getProperty("os.name");
-			if (os.contains("Windows")) {
-				Runtime.getRuntime().exec("cls");
-			} else {
-				Runtime.getRuntime().exec("clear");
-			}
-		} catch (final Exception e) {
-			e.printStackTrace();
-		}
+	public final static void clearConsole() throws IOException {
+		
 	}
 }

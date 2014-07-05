@@ -19,6 +19,6 @@ public class PicturePlayer extends FilePlayer {
 	@Override
 	public void play() throws IOException {
 		BufferedImage image = ImageIO.read(getSource().toFile());
-		System.out.println(PlayerUtils.stringify(image, 50));
+		System.out.println(PlayerUtils.stringify(image, getColumns()));
 	}
 }

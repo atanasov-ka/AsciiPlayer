@@ -18,11 +18,11 @@ public class GifPlayer extends SequencePlayer {
 	public List<String> convert(Path path) {
 		GifDecoder decoder = new GifDecoder();
 		List<String> frames = new ArrayList<String>();
-		
+		decoder.read(path.toString());
 		BufferedImage frame;
 		for (int i = 0, len = decoder.getFrameCount(); i < len; i++) {
 			frame = decoder.getFrame(i);
-			frames.add(PlayerUtils.stringify(frame, 100));
+			frames.add(PlayerUtils.stringify(frame, getColumns()));
 		}
 		
 		return frames;

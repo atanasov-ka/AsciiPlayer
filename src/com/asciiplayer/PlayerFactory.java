@@ -6,20 +6,26 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 
 public class PlayerFactory {
-	public static Player newPlayer(Path file) throws IOException, UnknownResourceTypeException {
+	public static Player newPlayer(Path file, int columns) throws IOException, UnknownResourceTypeException {
 		String extension = Files.probeContentType(file);
 	    extension = extension.toLowerCase();
+	    FilePlayer p = null;
 		switch (extension) {
 		case "image/jpeg":
-			return new PicturePlayer(file);
+			p = new PicturePlayer(file);
+			break; 
 		case "image/gif":
-			return new GifPlayer(file);
+			p = new GifPlayer(file);
+			break;
 		default:
 			throw new UnknownResourceTypeException();
 		}
+		
+		p.setColumns(columns);
+		return p;
 	}
 	
-	public static Player newPlayer(File file) throws IOException, UnknownResourceTypeException {
-		return newPlayer(file.toPath());
+	public static Player newPlayer(File file, int columns) throws IOException, UnknownResourceTypeException {
+		return newPlayer(file.toPath(), columns);
 	}
 }
